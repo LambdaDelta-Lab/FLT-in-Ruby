@@ -18,7 +18,7 @@ cadeias x de X com cadeias y de Y. Essa operação pode ser codificada da seguin
 uma linguagem é codificada como um Array que contém como elementos outros Arrays.
 =end
 
-def concatenar( linguagemX, linguagemY )
+def concatenar(linguagemX, linguagemY)
 	linguagemZ = []
 	linguagemX.each do |x|
 		linguagemY.each do |y|
@@ -27,3 +27,28 @@ def concatenar( linguagemX, linguagemY )
 	end
 	return linguagemZ
 end
+
+X = ["ab", "ba"]
+Y = ["01", "10"]
+
+puts(concatenar(X, Y))
+
+# Isomorfismo
+
+=begin
+Um isomorfismo mapeia um símbolo de um alfabeto para uma cadeia de uma linguagem. Dois símbolos não podem mapear
+a mesma cadeia. Em Ruby, isomorfismos podem ser codificados por instâncias da classe Hash.
+=end
+
+isomorfismo = {
+	0 => "0000",	1 => "0001",	2 => "0010",
+	3 => "0011",	4 => "0100",	5 => "0101",
+	6 => "0110",	7 => "0111",	8 => "1000",
+	9 => "1001"
+}
+
+=begin
+O isomorfismo inverso, por sua vez, pode ser codificado pelo operador invert() da classe Hash. 
+=end
+
+isomorfismo.invert["0111"] == 7
