@@ -14,15 +14,14 @@ class NFMovimentacao < Movimentacao
       end
     end
     return ondaDeClones
-end
+  end
 
-def mover(proximoEstado)
-  @automato.estadoCorrente = proximoEstado
-  @automato.entrada.avancar()
-end
-
-def adicionarTransicao(transicao)
-  @transicoes.update(transicao)
-end
-
+  def mover(proximoEstado)
+    @automato.estadoCorrente = proximoEstado
+    @automato.entrada.avancar()
+  end
+  
+  def adicionarTransicao(transicao)
+    @transicoes.update(transicao)
+  end
 end
