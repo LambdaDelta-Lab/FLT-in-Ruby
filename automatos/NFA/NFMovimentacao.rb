@@ -1,18 +1,19 @@
 require '../Movimentacao.rb'
 
 class NFMovimentacao < Movimentacao
-  ondaDeClones = {}
-  condicaoCorrente = [@automato.consulta.estadoCorrente?(),
-                      @automato.entrada.ler()]
-  @automato.transicoes.each do |condicaoEsperada, estadosSeguintes|
-    if (condicaoEsperada == condicaoCorrente)
-      estadosSeguintes.each do |estadoSeguinte|
-        clone = @automato.clonar()
-        ondaDeClones[clone] = estadoSeguinte
+  def calcularOndaDeClones()
+    ondaDeClones = {}
+    condicaoCorrente = [@automato.consulta.estadoCorrente?(),
+                        @automato.entrada.ler()]
+    @automato.transicoes.each do |condicaoEsperada, estadosSeguintes|
+      if (condicaoEsperada == condicaoCorrente)
+        estadosSeguintes.each do |estadoSeguinte|
+          clone = @automato.clonar()
+          ondaDeClones[clone] = estadoSeguinte
+        end
       end
     end
-  end
-  return ondaDeClones
+    return ondaDeClones
 end
 
 def mover(proximoEstado)
