@@ -1,0 +1,29 @@
+estados:
+  - q0
+  - q1
+  - q2
+  - q3
+
+alfabeto:
+  - a
+  - b
+
+estadoInicial:
+  - q0
+
+estadosFinais:
+  - q2
+
+transicoes:
+  q0:
+    a: q1
+    b: q3
+  q1:
+    a: q2
+    b: q3
+  q2:
+    a: q2
+    b: q2
+  q3:
+    a: q3
+    b: q3
