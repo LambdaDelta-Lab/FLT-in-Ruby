@@ -23,7 +23,7 @@ class Reconhecedor
   end
 
   def analisar()
-    @subEspacoAutomatos = @automato.executar()
+    @subEspacoAutomatos = @automato.executar() || []
   end
 
   def reconheceu?()
