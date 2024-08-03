@@ -16,5 +16,5 @@ rfd.automato.adicionarTransicao({["q3", "1"] => "q3"})
 rfd.automato.adicionarTransicao({["q3", "2"] => "q3"})
 
 rfd.iniciar("11")
-automatos = rfd.analisar()
+rfd.analisar()
 puts rfd.reconheceu?()
