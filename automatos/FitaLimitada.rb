@@ -1,4 +1,4 @@
-require 'Clonagem.rb'
+require File.expand_path('~/Documents/Ruby/Clonagem.rb')
 
 class FitaLimitada
   # Interface característica
