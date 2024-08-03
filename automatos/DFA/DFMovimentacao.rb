@@ -1,4 +1,4 @@
-require File.expand_path('~Documents/Ruby/Movimentacao.rb')
+require File.expand_path('~/Documents/Ruby/Movimentacao.rb')
 
 class DFMovimentacao < Movimentacao
   # Interface especializada
