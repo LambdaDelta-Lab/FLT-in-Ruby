@@ -1,4 +1,5 @@
-require 'Clonagem.rb'
+require File.expand_path('~/Documents/Ruby/Consulta.rb')
+require File.expand_path('~/Documents/Ruby/Clonagem.rb')
 
 class Automato
   # Estrutura de colaboradores
