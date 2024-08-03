@@ -1,5 +1,5 @@
 require '../Automata.rb'
-require 'FitaLimitada.rb'
+require '../FitaLimitada.rb'
 require 'NFMovimentacao.rb'
 
 class NFAutomata < Automata
