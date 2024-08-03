@@ -1,8 +1,8 @@
-require '../Automata.rb'
-require '../FitaLimitada.rb'
-require 'DFMovimentacao.rb'
+require File.expand_path('~/Documents/Ruby/Automato.rb')
+require File.expand_path('~/Documents/Ruby/FitaLimitada.rb')
+require File.expand_path('~/Documents/Ruby/DFA/DFMovimentacao.rb')
 
-class DFAutomata.rb < Automato
+class DFAutomata < Automato
   # Interface de instanciação
   def instanciarEntrada()
     @entrada = FitaLimitada.new()
