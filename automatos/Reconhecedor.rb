@@ -1,4 +1,4 @@
-require 'Automato.rb'
+require File.expand_path('~/Documents/Ruby/Automato.rb')
 
 class Reconhecedor
   # Estrutura de colaboradores
