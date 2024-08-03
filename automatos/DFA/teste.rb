@@ -1,4 +1,4 @@
-require 'DFReconhecedor.rb'
+require File.expand_path('~/Documents/Ruby/DFA/DFReconhecedor.rb')
 
 rfd = DFReconhecedor.new("q0", ["q1", "q2"])
 
@@ -15,6 +15,6 @@ rfd.automato.adicionarTransicao({["q3", "0"] => "q3"})
 rfd.automato.adicionarTransicao({["q3", "1"] => "q3"})
 rfd.automato.adicionarTransicao({["q3", "2"] => "q3"})
 
-rdf.iniciar("00001")
+rfd.iniciar("11")
 automatos = rfd.analisar()
-puts rfd.reconheceu?() #true
+puts rfd.reconheceu?()
