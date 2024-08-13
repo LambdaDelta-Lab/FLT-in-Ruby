@@ -1,77 +1,70 @@
 require File.expand_path('~/Documents/Ruby/Consulta.rb')
 require File.expand_path('~/Documents/Ruby/Clonagem.rb')
 
+
+
+# Classe Automato, que será usada como base para todos os tipos de automatos
 class Automato
-  # Estrutura de colaboradores
-  attr_accessor :entrada
-  attr_accessor :transicoes
-  attr_accessor :estadosFinais
-  attr_accessor :estadoCorrente
-  attr_accessor :movimentacao
-  attr_accessor :consulta
 
-  # Interface de instanciação
-  def initialize(estadoInicial, estadosFinais)
-    instanciarEstruturaEspecifica()
-    instanciarEntrada()
-    instanciarTransicoes()
-    instanciarEstadosFinais(estadosFinais)
-    instanciarEstadoCorrente(estadoInicial)
-    instanciarServicos()
-  end
+# Atributos que todo automato deve possuir
+attr_accessor :entrada, :transicoes, :estadosFinais, :estadoAtual, :movimentacao, :consulta
 
-  def instanciarEstruturaEspecifica()
-  end
+# Interface de instanciação
+def initialize(estadoInicial, estadosFinais)
+	instanciarEstruturaEspecifica()
+	instanciarEntrada()
+	instanciarTransicoes()
+	instanciarEstadosFinais(estadosFinais)
+	instanciarEstadoAtual(estadoInicial)
+	instanciarServicos()
+end
 
-  def instanciarEntrada()
-    raise NotImplementedError.new("'instanciarEntrada()' não pode ser executado.")
-  end
+def instanciarEstruturaEspecifica()
+end
 
-  def instanciarTransicoes()
-    @transicoes = {}
-  end
+def instanciarEntrada()
+	raise NotImplementedError.new("'instanciarEntrada()' não pode ser executado.")
+end
 
-  def adicionarTransicao(transicao)
-    raise NotImplementedError.new("'adicionarTransicao()' não pode ser executado.")
-  end
+def instanciarTransicoes()
+	@transicoes = {}
+end
 
-  def instanciarEstadosFinais(estadosFinais)
-    @estadosFinais = estadosFinais
-  end
+def adicionarTransicao(transicao)
+	raise NotImplementedError.new("'adicionarTransicao()' não pode ser executado.")
+end
 
-  def instanciarEstadoCorrente(estadoInicial)
-    @estadoCorrente = estadoInicial
-  end
+def instanciarEstadosFinais(estadosFinais)
+	@estadosFinais = estadosFinais
+end
 
-  def instanciarServicos()
-    instanciarConsulta()
-    instanciarMovimentacao()
-  end
+def instanciarEstadoAtual(estadoInicial)
+	@estadoAtual = estadoInicial
+end
 
-  def instanciarConsulta()
-    @consulta = Consulta.new(self)
-  end
+def instanciarServicos()
+	instanciarConsulta()
+	instanciarMovimentacao()
+end
 
-  # Interface característica
-  def iniciar(cadeia)
-    @entrada.iniciar(cadeia)
-  end
+def instanciarConsulta()
+	@consulta = Consulta.new(self)
+end
 
-  def executar()
-    return @movimentacao.executar()
-  end
+def instanciarMovimentacao()
+	raise NotImplementedError.new("'instanciarMovimentacao()' não pode ser executado."
+end
 
-  # Interface de consulta
-  def configuracao?()
-    return @consulta.configuracao?()
-  end
+# Interface característica
+def iniciar(cadeia)
+	@entrada.iniciar(cadeia)
+end
 
-  def estaEmEstadoFinal?()
-    return @consulta.estaEmEstadoFinal?()
-  end
+def executar()
+	return @movimentacao.executar()
+end
 
-  # Interface de clonagem
-  def clonar()
-    return Clonagem.new().clonar(self)
-  end
+# Interface de clonagem
+def clonar()
+	return Clonagem.new().clonar(self)
 end
