@@ -1,8 +1,6 @@
 require File.expand_path('~/Documents/Ruby/Consulta.rb')
 require File.expand_path('~/Documents/Ruby/Clonagem.rb')
 
-
-
 # Classe Automato, que será usada como base para todos os tipos de automatos
 class Automato
 
